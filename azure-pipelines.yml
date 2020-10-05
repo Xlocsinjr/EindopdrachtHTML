@@ -25,6 +25,16 @@ stages:
        includeRootFolder: false
 
     - task: PublishBuildArtifacts@1
+
+    - task: DownloadPipelineArtifact@2
+      inputs:
+         buildType: 'specific'
+         project: '849bc94d-c13c-463a-bf19-b9e12397d667'
+         definition: '2'
+         specificBuildWithTriggering: true
+         buildVersionToDownload: 'latest'
+         targetPath: '$(Pipeline.Workspace)'
+    
     
 - stage: 'release'
   displayName: 'Release the web application'
