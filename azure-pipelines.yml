@@ -33,6 +33,9 @@ stages:
     displayName: 'Release job'
 
     steps:
+    - download: current
+      artifact: drop
+   
     - task: AzureRmWebAppDeployment@4
       inputs:
         ConnectionType: 'AzureRM'
