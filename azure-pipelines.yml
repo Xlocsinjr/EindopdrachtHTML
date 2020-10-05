@@ -29,7 +29,7 @@ stages:
     - task: AzureRmWebAppDeployment@4
       inputs:
         ConnectionType: 'AzureRM'
-        azureSubscription: 'Service Connection - Eindopdracht'
+        azureSubscription: 'Azure Pass - Sponsorship(ccc539e8-6fbb-4f84-bd73-70d0d8ceea98)'
         appType: 'webApp'
         WebAppName: 'htmlopdracht-2233'
-        package: '$(System.DefaultWorkingDirectory)/**/*.zip'
+        packageForLinux: '$(Build.ArtifactStagingDirectory)/**/*.zip'
