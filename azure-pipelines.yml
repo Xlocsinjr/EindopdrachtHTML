@@ -39,4 +39,4 @@ stages:
         azureSubscription: 'Service Connection - Eindopdracht'
         appType: 'webApp'
         WebAppName: 'htmlopdracht-2233'
-        packageForLinux: '$(Build.ArtifactStagingDirectory)/**/*.zip'
+        package: '$(Build.ArtifactStagingDirectory)/**/*.zip'
