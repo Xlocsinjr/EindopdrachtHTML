@@ -26,13 +26,10 @@ stages:
 
     - task: PublishBuildArtifacts@1
      
-
-
-   
     - task: AzureRmWebAppDeployment@4
       inputs:
         ConnectionType: 'AzureRM'
         azureSubscription: 'Service Connection - Eindopdracht'
         appType: 'webApp'
         WebAppName: 'htmlopdracht-2233'
-        packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
+        package: '$(System.DefaultWorkingDirectory)/**/*.zip'
