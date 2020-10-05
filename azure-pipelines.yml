@@ -26,10 +26,17 @@ stages:
 
     - task: PublishBuildArtifacts@1
      
+- stage: 'release'
+  displayName: 'Release the web application'
+  jobs: 
+  - job: 'release'
+    displayName: 'Release job'
+
+    steps:
     - task: AzureRmWebAppDeployment@4
       inputs:
         ConnectionType: 'AzureRM'
-        azureSubscription: 'Azure Pass - Sponsorship(ccc539e8-6fbb-4f84-bd73-70d0d8ceea98)'
+        azureSubscription: 'Service Connection - Eindopdracht'
         appType: 'webApp'
         WebAppName: 'htmlopdracht-2233'
         packageForLinux: '$(Build.ArtifactStagingDirectory)/**/*.zip'
