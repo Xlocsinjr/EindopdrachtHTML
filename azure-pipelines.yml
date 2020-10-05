@@ -32,7 +32,7 @@ stages:
   - deployment: Deploy
     pool:
       vmImage: 'ubuntu-latest'
-    
+    environment: release
   
     strategy:
       runOnce:
