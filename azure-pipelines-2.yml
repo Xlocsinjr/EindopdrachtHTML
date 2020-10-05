@@ -15,3 +15,11 @@ steps:
     rootFolderOrFile: '$(build.sourcesDirectory)'
     includeRootFolder: false
 - task: PublishBuildArtifacts@1
+
+- task: AzureRmWebAppDeployment@4
+  inputs:
+    ConnectionType: 'AzureRM'
+    azureSubscription: 'Service Connection - Eindopdracht'
+    appType: 'webApp'
+    WebAppName: 'htmlopdracht-2233'
+    packageForLinux: '$(Build.ArtifactStagingDirectory)/**/*.zip'
