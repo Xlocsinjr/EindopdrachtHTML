@@ -28,18 +28,24 @@ stages:
      
 - stage: 'release'
   displayName: 'Release the web application'
-  jobs: 
-  - job: 'release'
-    displayName: 'Release job'
-
-    steps:
-    - download: current
-      artifact: drop
+  jobs:
+  - deployment: Deploy
+    pool:
+      vmImage: 'ubuntu-18.04'
+    environment: dev
+    variables:
+    - group: Release
+    strategy:
+      runOnce:
+        deploy:
+          steps:
+          - download: current
+            artifact: drop
    
-    - task: AzureRmWebAppDeployment@4
-      inputs:
-        ConnectionType: 'AzureRM'
-        azureSubscription: 'Service Connection - Eindopdracht'
-        appType: 'webApp'
-        WebAppName: 'htmlopdracht-2233'
-        package: '$(Build.ArtifactStagingDirectory)/**/*.zip'
+          - task: AzureRmWebAppDeployment@4
+            inputs:
+              ConnectionType: 'AzureRM'
+              azureSubscription: 'Service Connection - Eindopdracht'
+              appType: 'webApp'
+              WebAppName: 'htmlopdracht-2233'
+              package: '$(Build.ArtifactStagingDirectory)/**/*.zip'
