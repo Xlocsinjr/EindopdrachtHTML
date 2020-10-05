@@ -1,0 +1,59 @@
+/**
+*
+*
+*
+**/
+
+body {
+    background-color: #f3f3f3;
+    font-family: sans-serif;
+}
+
+.boxContainer{
+    width: 100%;
+    /*height: 322px; /* 300px container height + 2 * 10px margins + 2* 1px borders */
+    display: inline-block;
+}
+
+.container {
+    background-color: white;
+    margin: 10px;
+    border: 1px solid #c5c5c5;
+    float:left;
+    min-width: 200px;
+}
+  
+.boxHeader {
+    background-color: #ececec;
+    padding: 10px;
+    text-align: center;
+    font-size: 20px;
+}
+  
+.boxContent {
+    /*padding: 20px;*/
+    padding-left:16px;
+}
+
+.roadmapHeader{
+    padding-left:calc(25%);
+}
+
+.roadmapContent{
+    padding-left:calc(25%);
+}
+
+.roadmapContainer {
+    background-color: white;
+    margin: 10px;
+}
+
+.basictraining{
+    width: calc(25% - 22px); /* 10px margin and 1px border on each side = 22px */
+    height: 300px;
+}
+
+.devOps{
+    width: calc(50% - 22px); /* 10px margin and 1px border on each side = 22px */
+    height: 300px;
+}
