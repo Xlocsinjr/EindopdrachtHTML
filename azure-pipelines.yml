@@ -33,10 +33,7 @@ stages:
      steps:
       - task: DownloadBuildArtifacts@0
         inputs:
-          buildType: 'specific'
-          project: '849bc94d-c13c-463a-bf19-b9e12397d667'
-          pipeline: '2'
-          buildVersionToDownload: 'latest'
+          buildType: 'current'
           downloadType: 'single'
           downloadPath: '$(System.ArtifactsDirectory)'
           artifactName: 'drop'
