@@ -9,7 +9,7 @@ body {
 
 .topnav {
   overflow: hidden;
-  background-color: rgb(10, 177, 228);
+  background-color: red;
 }
 
 .topnav a {
