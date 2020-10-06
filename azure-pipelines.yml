@@ -6,14 +6,12 @@
 trigger:
 - master
 
-pool:
-  vmImage: 'ubuntu-latest'
-
 stages:
 - stage: 'Build'
   jobs:
   - job: 'Build'
-
+    pool:
+      vmImage: 'ubuntu-latest'
     steps:
       - task: ArchiveFiles@2
         inputs:
@@ -36,9 +34,7 @@ stages:
           buildType: 'current'
           downloadType: 'single'
           downloadPath: '$(System.ArtifactsDirectory)'
-          artifactName: 'drop'
-          
-         
+          artifactName: 'drop'    
       - task: AzureRmWebAppDeployment@4
         inputs:
           ConnectionType: 'AzureRM'
