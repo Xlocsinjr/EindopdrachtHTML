@@ -38,10 +38,10 @@ stages:
       - task: AzureRmWebAppDeployment@4
         inputs:
           ConnectionType: 'AzureRM'
-          azureSubscription: 'HTML Eindproject'
-          appType: 'webAppLinux'
-          WebAppName: 'htmlproject-2244'
-          packageForLinux: '$(System.ArtifactsDirectory)/**/*.zip'
+          azureSubscription: 'Service Connection - HTML Eindproject'
+          appType: 'webApp'
+          WebAppName: 'htmlproject-2255'
+          packageForLinux: '$(Build.ArtifactStagingDirectory)/**/*.zip'
       
 
 
