@@ -398,7 +398,16 @@ select {
 
 /* ------Slider-----*/
 
-#container #slider {}
+#container #slider {
+
+	width: 960px;
+	height: 360px;
+	background-color: salmon;
+}
+
+#container > h1 {
+	margin-top: 30px;
+}
 
 
 /* ------Main Content-----*/
