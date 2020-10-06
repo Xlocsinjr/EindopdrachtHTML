@@ -49,7 +49,7 @@ body {
 }
 
 .basictraining{
-    width: calc(25% - 22px); /* 10px margin and 1px border on each side = 22px */
+    width: calc(20% - 22px); /* 10px margin and 1px border on each side = 22px */
     height: 300px;
 }
 
