@@ -4,14 +4,51 @@
 # https://aka.ms/yaml
 
 trigger:
-- master
+- none
 
 pool:
   vmImage: 'ubuntu-latest'
 
-steps:
-- task: ArchiveFiles@2
-  inputs:
-    rootFolderOrFile: '$(build.sourcesDirectory)'
-    includeRootFolder: false
-- task: PublishBuildArtifacts@1
+stages:
+- stage: 'Build'
+  jobs:
+  - job: 'Build'
+
+    steps:
+      - task: ArchiveFiles@2
+        inputs:
+          rootFolderOrFile: '$(build.sourcesDirectory)'
+          includeRootFolder: false
+      - task: PublishBuildArtifacts@1
+        inputs:
+          PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+          ArtifactName: 'drop'
+
+- stage: Deploy
+  jobs:
+   - job: Deploy
+     pool:
+       vmImage: 'ubuntu-latest'
+     steps:
+      - task: DownloadBuildArtifacts@0
+        inputs:
+          buildType: 'current'
+          downloadType: 'single'
+          downloadPath: '$(System.ArtifactsDirectory)'
+          artifactName: 'drop'
+          
+      - task: AzureRmWebAppDeployment@4
+        inputs:
+          ConnectionType: 'AzureRM'
+          azureSubscription: 'HTML Eindproject'
+          appType: 'webAppLinux'
+          WebAppName: 'htmlproject-2244'
+          packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
+          
+      
+      
+
+
+
+
+
