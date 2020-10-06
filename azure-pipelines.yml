@@ -48,7 +48,7 @@ stages:
           azureSubscription: 'HTML Eindproject'
           appType: 'webAppLinux'
           WebAppName: 'htmlproject-2244'
-          packageForLinux: '$(System.ArtifactsDirectory)/drop/*.zip'
+          packageForLinux: '$(System.ArtifactsDirectory)/**/*.zip'
       
 
 
