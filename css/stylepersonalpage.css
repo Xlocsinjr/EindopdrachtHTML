@@ -18,32 +18,6 @@ header {
   color: white;
 }
 
-/* Create two columns/boxes that floats next to each other */
-.topnav {
-  overflow: hidden;
-  background-color: rgb(92, 92, 92);
-}
-
-.topnav a {
-  float: left;
-  color: #f2f2f2;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
-}
-
-.topnav a:hover {
-  background-color: #ddd;
-  color: black;
-}
-
-.topnav a.active {
-  background-color: #4CAF50;
-  color: white;
-}
-
-
 article {
   float: right;
   padding: 10px;
@@ -52,12 +26,11 @@ article {
   width: 80%; 
 }
 
-article1 {
+.article1 {
   float: left;
   padding: 5px;
   width: 20%;
   background-color: #98B4D4;
-  
   
 }
 
