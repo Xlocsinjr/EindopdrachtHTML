@@ -43,8 +43,3 @@ stages:
           WebAppName: 'htmlproject-2255'
           packageForLinux: '$(Build.ArtifactStagingDirectory)/**/*.zip'
       
-
-
-
-
-
