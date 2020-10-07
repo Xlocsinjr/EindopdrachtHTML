@@ -4,8 +4,6 @@
 
 body {
   font-family: Arial, Helvetica, sans-serif;
-  background-color: #92A8D1;
-  
 }
 
 /* Style the header */
@@ -39,6 +37,49 @@ section:after {
   content: "";
   display: table;
   clear: both;
+}
+
+
+/* ------------------------------------------------------------------ */
+/* c. About Section
+/* ------------------------------------------------------------------ */
+
+#about {
+  border: 1px solid #D6D6D6;
+  padding-top: 96px;
+  padding-bottom: 66px;
+  overflow: hidden;
+  width: 75%;
+  margin: 0 auto;
+  padding: 32px;
+}
+
+#about a, #about a:visited  { color: #fff; }
+#about a:hover, #about a:focus { color: #11ABB0; }
+
+#about h2 {
+  font: 22px/30px 'opensans-bold', sans-serif;
+  color: #fff;
+  margin-bottom: 12px;
+}
+#about p {
+  line-height: 30px;
+  color: #7A7A7A;
+}
+#about .profile-pic {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  border-radius: 100%;
+}
+#about .contact-details { width: 41.66667%; }
+#about .download {
+  width: 58.33333%;
+  padding-top: 6px;
+}
+
+#personalList {
+  display: inline-block;
 }
 
 
