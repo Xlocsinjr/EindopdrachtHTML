@@ -40,6 +40,6 @@ stages:
           ConnectionType: 'AzureRM'
           azureSubscription: 'Service Connection - HTML Eindproject'
           appType: 'webApp'
-          WebAppName: 'htmlproject-2255'
+          WebAppName: 'htmlproject-2266'
           packageForLinux: '$(Build.ArtifactStagingDirectory)/**/*.zip'
       
