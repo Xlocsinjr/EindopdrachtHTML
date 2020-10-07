@@ -402,7 +402,7 @@ select {
 
 	width: 960px;
 	height: 360px;
-	background-color: #D6D6D6;
+	background-color: #ececec;
 	display: inline-block;
 }
 
@@ -424,23 +424,49 @@ select {
 
 /* ------Main Content-----*/
 
+#intro h2 {
+	font-size: 30px;
+	padding-left: 22px;
+}
+
 #container #homepage {
 	display: block;
 	width: 100%;
 	line-height: 1.8em;
 }
 
-#container #homepage #services {}
+#container #homepage #services {
+	margin-top: 64px;
+}
+
+#container #homepage #services h2 {
+	margin-bottom: 24px;
+}
 
 #container #homepage #services article {}
 
 #container #homepage #services article figure {}
 
 #container #homepage #services article figure img {
+	max-width:55%; 
+	height:auto; 
+}
+
+#imgbox, #imgbox-mid {
+	text-align:center; 
 	margin: 0 0 15px 0;
 	padding: 4px;
 	border: 1px solid #D6D6D6;
+	width: 290px;
+	height: 180px;
+	display: block;
 }
+
+#javalogo {
+	padding-top: 40px;
+}
+
+
 
 #container #homepage #services article figure figcaption {}
 
