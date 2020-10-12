@@ -43,4 +43,12 @@ stages:
           appType: 'webApp'
           WebAppName: 'htmlproject-2288'
           packageForLinux: '$(Build.ArtifactStagingDirectory)/**/*.zip'
+      - task: AzureAppServiceManage@0
+        inputs:
+          azureSubscription: 'EindopdrachtHTML-subX-sc'
+          Action: 'Swap Slots'
+          WebAppName: 'htmlproject-2288'
+          ResourceGroupName: 'eindproject-rg'
+          SourceSlot: 'Swap'
+      
       
