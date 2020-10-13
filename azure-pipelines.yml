@@ -4,7 +4,13 @@
 # https://aka.ms/yaml
 
 trigger:
-- '*'
+
+
+  branches:
+  - master
+  - pipelineChanges
+  
+
 pr: none
 
 stages:
@@ -24,6 +30,7 @@ stages:
           ArtifactName: 'drop'
           publishLocation: 'Container'
 
+              
 - stage: Deploy
   jobs:
    - job: Deploy
@@ -39,8 +46,16 @@ stages:
       - task: AzureRmWebAppDeployment@4
         inputs:
           ConnectionType: 'AzureRM'
-          azureSubscription: 'Service Connection - HTML Eindproject'
+          azureSubscription: 'EindopdrachtHTML-subX-sc'
           appType: 'webApp'
-          WebAppName: 'htmlproject-2266'
+          WebAppName: 'htmlproject-2288'
           packageForLinux: '$(Build.ArtifactStagingDirectory)/**/*.zip'
+      - task: AzureAppServiceManage@0
+        inputs:
+          azureSubscription: 'EindopdrachtHTML-subX-sc'
+          Action: 'Swap Slots'
+          WebAppName: 'htmlproject-2288'
+          ResourceGroupName: 'eindproject-rg'
+          SourceSlot: 'Swap'
+      
       
