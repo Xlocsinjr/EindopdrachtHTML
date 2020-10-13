@@ -43,8 +43,8 @@ stages:
           ConnectionType: 'AzureRM'
           azureSubscription: 'htmlopdracht-sc-w'
           appType: 'webApp'
-          WebAppName: 'csharpopdracht-2232'
-          packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
+          WebAppName: 'htmlopdracht-223'
+          packageForLinux: packageForLinux:'$(Build.ArtifactStagingDirectory)/*/.zip'
 
          
 
