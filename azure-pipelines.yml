@@ -26,7 +26,8 @@ stages:
           azureSubscription: 'htmlopdracht-sc-w'
           appType: 'webApp'
           WebAppName: 'htmlopdracht-223'
-          packageForLinux: '$(Build.ArtifactStagingDirectory)/*/.zip'
+          packageForLinux: '$(Build.ArtifactStagingDirectory)/**/*/.zip'
+
 
          
 
