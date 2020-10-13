@@ -6,7 +6,7 @@
 trigger:
 - master
 - pipelineChanges
-  
+
 pr: none
 
 stages:
