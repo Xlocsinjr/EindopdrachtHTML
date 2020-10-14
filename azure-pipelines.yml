@@ -42,10 +42,18 @@ stages:
       - task: AzureRmWebAppDeployment@4
         inputs:
           ConnectionType: 'AzureRM'
-          azureSubscription: 'htmlopdracht-sc-w'
+          azureSubscription: 'htmlopdracht-sc-w-2'
           appType: 'webApp'
-          WebAppName: 'htmlopdracht-223'
+          WebAppName: 'csharpopdracht-224'
           packageForLinux: '$(Build.ArtifactStagingDirectory)/**/*.zip'
+      
+      - task: AzureAppServiceManage@0
+        inputs:
+          azureSubscription: 'htmlopdracht-sc-w-2'
+          Action: 'Swap Slots'
+          WebAppName: 'csharpopdracht-224'
+          ResourceGroupName: 'csharpopdracht-rg'
+          SourceSlot: 'Swap'
 
       
       
